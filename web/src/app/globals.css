@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Te Whare Manaaki Marae — design system
+   Palette inspired by whakairo (carving), pounamu (greenstone)
+   and kōkōwai (red ochre). Warm, grounded, high-contrast.
+------------------------------------------------------------------- */
+
+:root {
+  --background: #fbf8f2; /* warm cream */
+  --surface: #ffffff;
+  --surface-muted: #f3ede1;
+  --foreground: #221c16; /* near-black warm */
+  --muted: #6b6052;
+
+  --pounamu: #12503a; /* deep greenstone */
+  --pounamu-600: #1a6b4d;
+  --pounamu-050: #e7f1ec;
+
+  --ochre: #b4402a; /* kōkōwai red */
+  --ochre-600: #c8552f;
+  --ochre-050: #f8eae4;
+
+  --gold: #c99a3f;
+
+  --border: #e7dECB;
+  --ring: #1a6b4d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
+  --color-pounamu: var(--pounamu);
+  --color-pounamu-600: var(--pounamu-600);
+  --color-pounamu-050: var(--pounamu-050);
+
+  --color-ochre: var(--ochre);
+  --color-ochre-600: var(--ochre-600);
+  --color-ochre-050: var(--ochre-050);
+
+  --color-gold: var(--gold);
+
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-fraunces);
+
+  --radius-xl: 1rem;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Woven tukutuku-inspired section divider pattern */
+.pattern-band {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--ochre) 0 10px,
+    transparent 10px 20px
+  ),
+  repeating-linear-gradient(-45deg, var(--pounamu) 0 10px, transparent 10px 20px);
+  background-size: 28px 28px;
+  opacity: 0.85;
+}
+
+/* Subtle koru/weave texture for hero overlays */
+.texture-weave {
+  background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 0
+    );
+  background-size: 22px 22px;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease both;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
