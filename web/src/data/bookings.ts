@@ -3,18 +3,26 @@
 // APPROVED / CONFIRMED bookings only (date + time). Here it is mocked
 // relative to the current month so the demo always displays data.
 
+// Bookable spaces, matching the MaraeBiz public booking enquiry form.
+export const VENUES = [
+  "Full Complex",
+  "Conference Centre - Room 2",
+  "Wharekai",
+  "Wharenui",
+] as const;
+
+export type Venue = (typeof VENUES)[number];
+
 export type Booking = {
   id: string;
   date: string; // YYYY-MM-DD
   startTime: string; // HH:mm (24h)
   endTime: string; // HH:mm (24h)
-  venue: "Wharenui" | "Wharekai" | "Grounds";
+  venue: Venue;
   // Public calendar shows date + time only; label is a neutral booking type.
   label: string;
   status: "confirmed";
 };
-
-const VENUES: Booking["venue"][] = ["Wharenui", "Wharekai", "Grounds"];
 const LABELS = [
   "Hui / Meeting",
   "Wānanga",

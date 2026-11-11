@@ -15,9 +15,10 @@ const MONTHS = [
 ];
 
 const venueColor: Record<Booking["venue"], string> = {
-  Wharenui: "bg-pounamu",
+  "Full Complex": "bg-pounamu",
+  "Conference Centre - Room 2": "bg-[#2f6f8f]",
   Wharekai: "bg-ochre",
-  Grounds: "bg-gold",
+  Wharenui: "bg-gold",
 };
 
 function toKey(y: number, m: number, d: number) {
