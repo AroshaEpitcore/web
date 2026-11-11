@@ -92,6 +92,24 @@ export function Button({
   );
 }
 
+/** Button that links to an external URL (opens in a new tab by default). */
+export function ButtonExternalLink({
+  variant = "primary",
+  className = "",
+  target = "_blank",
+  rel = "noopener noreferrer",
+  ...props
+}: ComponentProps<"a"> & { variant?: ButtonVariant }) {
+  return (
+    <a
+      target={target}
+      rel={rel}
+      {...props}
+      className={`${buttonBase} ${buttonStyles[variant]} ${className}`}
+    />
+  );
+}
+
 export function Card({
   children,
   className = "",

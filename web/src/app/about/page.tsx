@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Container, SectionHeading, ButtonLink, Card } from "@/components/ui";
+import { Container, SectionHeading, ButtonLink, ButtonExternalLink, Card } from "@/components/ui";
 import { PageHeader, WhareScene } from "@/components/Artwork";
 import { aboutParagraphs, values, highlights } from "@/data/content";
+import { maraebizEnquiryUrl } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -91,7 +92,7 @@ export default function AboutPage() {
               className="mb-8"
             />
             <div className="flex flex-wrap justify-center gap-3">
-              <ButtonLink href="/enquiry" variant="secondary">Make a booking enquiry</ButtonLink>
+              <ButtonExternalLink href={maraebizEnquiryUrl} variant="secondary">Make a booking enquiry</ButtonExternalLink>
               <ButtonLink href="/contact" variant="ghost">Contact us</ButtonLink>
             </div>
           </div>

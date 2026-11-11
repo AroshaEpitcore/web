@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
-import { nav, site } from "@/data/site";
+import { nav, site, maraebizEnquiryUrl } from "@/data/site";
 
 const YEAR = new Date().getFullYear();
 
@@ -22,18 +22,26 @@ export function Footer() {
               Explore
             </h3>
             <ul className="mt-4 space-y-2">
-              {[...nav, { label: "Booking Enquiry", href: "/enquiry" }].map(
-                (item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="text-sm text-muted transition-colors hover:text-pounamu"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ),
-              )}
+              {nav.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-muted transition-colors hover:text-pounamu"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a
+                  href={maraebizEnquiryUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted transition-colors hover:text-pounamu"
+                >
+                  Booking Enquiry
+                </a>
+              </li>
             </ul>
           </div>
 

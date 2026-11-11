@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { Container, SectionHeading, ButtonLink, Card } from "@/components/ui";
+import { Container, SectionHeading, ButtonLink, ButtonExternalLink, Card } from "@/components/ui";
 import { WhareScene, GlyphIcon } from "@/components/Artwork";
 import { services, highlights, values } from "@/data/content";
-import { site } from "@/data/site";
+import { site, maraebizEnquiryUrl } from "@/data/site";
 
 export default function HomePage() {
   return (
@@ -27,13 +27,13 @@ export default function HomePage() {
               <ButtonLink href="/bookings" variant="secondary">
                 View Bookings Calendar
               </ButtonLink>
-              <ButtonLink
-                href="/enquiry"
+              <ButtonExternalLink
+                href={maraebizEnquiryUrl}
                 variant="ghost"
                 className="!text-white !ring-white/40 hover:!bg-white/10"
               >
                 Make an Enquiry
-              </ButtonLink>
+              </ButtonExternalLink>
             </div>
           </div>
 

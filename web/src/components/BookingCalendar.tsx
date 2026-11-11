@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Link from "next/link";
 import {
   getBookings,
   formatTimeRange,
   type Booking,
 } from "@/data/bookings";
+import { maraebizEnquiryUrl } from "@/data/site";
 
 const WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const MONTHS = [
@@ -224,13 +224,15 @@ export function BookingCalendar() {
           )}
         </div>
 
-        <Link
-          href="/enquiry"
+        <a
+          href={maraebizEnquiryUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ochre px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-ochre-600"
         >
           Make a Booking Enquiry
           <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-        </Link>
+        </a>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { nav } from "@/data/site";
+import { nav, maraebizEnquiryUrl } from "@/data/site";
 import { Logo } from "@/components/Logo";
 
 export function Navbar() {
@@ -40,12 +40,14 @@ export function Navbar() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/enquiry"
+          <a
+            href={maraebizEnquiryUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-2 inline-flex items-center rounded-full bg-ochre px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-ochre-600"
           >
             Booking Enquiry
-          </Link>
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -88,12 +90,14 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="/enquiry"
+            <a
+              href={maraebizEnquiryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-2 block rounded-lg bg-ochre px-3 py-3 text-center text-base font-semibold text-white"
             >
               Booking Enquiry
-            </Link>
+            </a>
           </div>
         </div>
       ) : null}

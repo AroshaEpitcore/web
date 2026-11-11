@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Container, SectionHeading, ButtonLink } from "@/components/ui";
+import { Container, SectionHeading, ButtonLink, ButtonExternalLink } from "@/components/ui";
 import { PageHeader, GlyphIcon } from "@/components/Artwork";
 import { services } from "@/data/content";
+import { maraebizEnquiryUrl } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -71,9 +72,9 @@ export default function ServicesPage() {
                 >
                   View calendar
                 </ButtonLink>
-                <ButtonLink href="/enquiry" className="!bg-white !text-ochre hover:!bg-white/90">
+                <ButtonExternalLink href={maraebizEnquiryUrl} className="!bg-white !text-ochre hover:!bg-white/90">
                   Booking enquiry
-                </ButtonLink>
+                </ButtonExternalLink>
               </div>
             </div>
           </div>

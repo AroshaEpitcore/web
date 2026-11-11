@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui";
 import { PageHeader } from "@/components/Artwork";
 import { BookingCalendar } from "@/components/BookingCalendar";
+import { maraebizEnquiryUrl } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Bookings Calendar",
@@ -28,7 +29,12 @@ export default function BookingsPage() {
               calendar displays confirmed bookings for information only and does
               not reveal private booking details. To check availability for a
               specific date, please{" "}
-              <a href="/enquiry" className="font-semibold text-pounamu underline underline-offset-2">
+              <a
+                href={maraebizEnquiryUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-pounamu underline underline-offset-2"
+              >
                 submit a booking enquiry
               </a>
               .
